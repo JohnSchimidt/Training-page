@@ -1,67 +1,91 @@
-:root {
-    --primary-color: rgba(5, 0, 34, 1);
-    --white: #FFFFFF;
-    --gap: 3rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-family: "Open Sans", sans-serif;
-    font-size: 2rem;
-    color: var(--primary-color);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Montserrat", sans-serif;
-}
-
-h1 {
-    font-size: 6rem;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: 5.5rem;
-}
-
-h3 {
-    font-size: 5rem;
-}
-
-h4 {
-    font-size: 4.5rem;
-}
-
-h5 {
-    font-size: 4rem;
-}
-
-h6 {
-    font-size: 3.5rem;
-}
-
-.main-bg {
-    background-image: url('../img/main-bg.svg');
-    background-size: cover;
-    background-position: center center;
-    color: var(--white);
-}
-.main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--gap);
-}
-.section {
+.intro-content {
+    position: relative;
+    top: -7rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: var(--gap);
     min-height: 100vh;
 }
-.white-bg {
-    background-color: #FFFFFF;
+
+.intro-text-content, .intro-img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.intro-text-content h2 {
+    font-size: 6rem;
+    margin-bottom: 6rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.intro-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.top3-content {
+    max-width: 64rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.grid-one-content {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.grid-main-head {
+    margin-bottom: 1rem;
+}
+
+.grid-description {
+    padding-bottom: 5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: gridcounter;
+}
+
+.grid h3 {
+    font-size: 3rem;
+    position: relative;
+    padding-left: 5rem;
+    padding-bottom: 2.3rem;
+}
+
+.grid h3::before {
+    counter-increment: gridcounter;
+    content: counter(gridcounter);
+    position: absolute;
+    font-size: 6rem;
+    font-style: italic;
+    top: -3rem;
+    left: -1rem;
+    transform: rotate(5deg);
+}
+
+.galery-img {
+    width: 100% ;
+    max-width: 22.5rem;
+    max-width: 22.5rem;
+    overflow: hidden;
+}
+
+.galery-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.galery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
